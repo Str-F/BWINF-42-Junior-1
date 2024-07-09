@@ -1,5 +1,6 @@
 from timeit import timeit
 
+# function to read the variables in from a file
 def analys_file(filename):
     with open(filename, "r") as f:
         bagcount = int(f.readline())
