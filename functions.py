@@ -9,6 +9,7 @@ def read_file(filename):
 
     return bagcount, gamescount, games
 
+
 # function to compute how many games are in each bag
 def processing_data(bagcount, gamescount, games):
     # initialize list
@@ -28,3 +29,7 @@ def processing_data(bagcount, gamescount, games):
                 b += 1
 
     return result
+
+
+def processing_numpy():
+    return
