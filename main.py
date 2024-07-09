@@ -1,10 +1,14 @@
-def readline(filename):
+def analys_file(filename):
     with open(filename, "r") as f:
         lines = f.readlines()
-    return lines
+    bagcount = int(lines[0])
+    gamescount = int(lines[1])
+    games = []
+    for i in range(2, gamescount+2):
+        games.append(int(lines[i]))
 
-lines = readline("data/wundertuete0.txt")
+    return bagcount, gamescount, games
 
-print(lines)
+bagcount, gamescount, games = readline("data/wundertuete0.txt")
 
-lines
+print(bagcount, gamescount, games)
