@@ -1,4 +1,3 @@
-from random import randint
 from functions import processing_data
 import unittest
 import numpy as np
@@ -7,12 +6,11 @@ import numpy as np
 class TestProcessing(unittest.TestCase):
 
     def test_processing_large_datasets(self):
-        for _ in range(1):
-            bagcount = randint(1, int(1e3))
-            gamescount = randint(1, int(1e3))
-            games = []
-            for _ in range(gamescount):
-                games.append(randint(1, int(3e4)))
+        for _ in range(10):
+            bagcount = np.random.randint(1, int(1e3))
+            gamescount = np.random.randint(1, int(1e3))
+            games = np.random.randint(1, int(3e4), size=gamescount)
+
             result = np.array(processing_data(bagcount, gamescount, games), dtype=int)
             self.assertEqual(len(result), bagcount)
 
@@ -20,5 +18,7 @@ class TestProcessing(unittest.TestCase):
             self.assertTrue(np.all(np.sum(result, axis=0) == games))
             bagssum = np.sum(result, axis=1)
             self.assertTrue(np.max(bagssum) - np.min(bagssum) <= 1)
+
+            
 if __name__ == '__main__':
     unittest.main()
