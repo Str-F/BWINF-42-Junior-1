@@ -28,3 +28,6 @@ def processing_data(bagcount, gamescount, games):
                 b += 1
 
     return result
+
+def processing_numpy():
+    return
