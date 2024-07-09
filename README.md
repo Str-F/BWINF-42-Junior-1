@@ -2,7 +2,7 @@
 The first Junior Task of Bwinf 42
 
 # Input
-Each file describes a donation to the kindergarten and contains
+Each file describes a donation to the kindergarten and contains \n
 -in the first line the number n of goody bags,
 -in the second line the number k of game types
 -and in the following k lines the number of games per game type.
