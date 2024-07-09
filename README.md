@@ -2,7 +2,7 @@
 The first Junior Task of Bwinf 42
 
 # Input
-Each file describes a donation to the kindergarten and contains
+####Each file describes a donation to the kindergarten and contains
 
 -in the first line the number n of goody bags,
 
@@ -11,7 +11,7 @@ Each file describes a donation to the kindergarten and contains
 -and in the following k lines the number of games per game type.
 
 
-## The files are in 'data/*'
+### The files are in 'data/*'
 
 # Output
 Example
