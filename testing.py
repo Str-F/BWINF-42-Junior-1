@@ -1,5 +1,3 @@
-from timeit import timeit
-from functions import *
+from random import randint
 
-# measure the time taken for 50 repetitions
-print(timeit('read_file("data/wundertuete0.txt")', number=50, globals={'read_file': read_file}))
+print(randint(1, 1e6))
