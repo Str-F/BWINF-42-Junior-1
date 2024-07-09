@@ -1,3 +1,10 @@
-f = open("data/wundertuete0.txt", "r")
+def readline(filename):
+    with open(filename, "r") as f:
+        lines = f.readlines()
+    return lines
 
-mylist = f.readlines()
+lines = readline("data/wundertuete0.txt")
+
+print(lines)
+
+lines
