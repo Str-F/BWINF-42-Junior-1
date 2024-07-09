@@ -1,4 +1,5 @@
 from timeit import timeit
+from pprint import pprint
 
 # function to read the variables in from a file at path 'filename'
 def read_file(filename):
@@ -6,7 +7,7 @@ def read_file(filename):
         bagcount = int(f.readline())
         gamescount = int(f.readline())
         games = []
-        for i in range(2, gamescount+2):
+        for _ in range(2, gamescount+2):
             games.append(int(f.readline()))
 
     return bagcount, gamescount, games
@@ -18,3 +19,32 @@ print(timeit('read_file("data/wundertuete0.txt")', number=50, globals={'read_fil
 bagcount, gamescount, games = read_file('data/wundertuete0.txt')
 
 print(bagcount, gamescount, games)
+
+
+
+def processing_data(bagcount, gamescount, games):
+    # initialize list
+    result = []
+    for i in range(bagcount):
+        result.append([0 for _ in range(gamescount)])
+
+    # distribute games
+    b = 0
+    
+    for i in range(gamescount):
+        for e in range(games[i]):
+            result[b][i] += 1
+            if b == bagcount - 1:
+                b = 0
+            else:
+                b += 1
+
+    return result
+
+
+
+result = processing_data(bagcount, gamescount, games)
+
+
+
+pprint(result, width=30)
