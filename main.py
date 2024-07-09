@@ -9,6 +9,6 @@ def analys_file(filename):
 
     return bagcount, gamescount, games
 
-bagcount, gamescount, games = readline("data/wundertuete0.txt")
+bagcount, gamescount, games = analys_file("data/wundertuete0.txt")
 
 print(bagcount, gamescount, games)
