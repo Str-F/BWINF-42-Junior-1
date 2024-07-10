@@ -15,7 +15,7 @@ def read_file(filename):
 # function to compute how many games are in each bag
 def processing_data(bagcount, gamescount, games):
     # initialize list
-    result = np.zeros(bagcount, gamescount)
+    result = np.zeros((bagcount, gamescount), np.uint16)
 
     # distribute games
     b = 0

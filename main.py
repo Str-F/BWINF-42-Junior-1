@@ -1,4 +1,4 @@
-from functions import *
+from betterfunctions import *
 
 
 if __name__=='__main__':
