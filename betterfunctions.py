@@ -14,15 +14,25 @@ def read_file(filename):
 
 # function to compute how many games are in each bag
 def processing_data(bagcount, gamescount, games):
+
+    fullgames = []
+    überbleiblesgames= []
+
+    for i in range(len(games)):
+        fullgames.append(games[i]//bagcount)
+        überbleiblesgames.append(games[i] % bagcount)
+
+    fullgames = int(np.sum(fullgames))
+
     # initialize list
-    result = np.zeros((bagcount, gamescount), np.uint16)
+    result = np.full((bagcount, gamescount),fullgames , np.uint16)
 
     # distribute games
     b = 0
     
     for i in range(gamescount):
-        for e in range(games[i]):
-            result[b][i] += 1
+        for e in range(überbleiblesgames[i]):
+            result[b, i] += 1
             if b == bagcount - 1:
                 b = 0
             else:

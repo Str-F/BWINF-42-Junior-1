@@ -1,4 +1,4 @@
-import functions as bf
+import betterfunctions as bf
 import functions as f
 import unittest
 import numpy as np
