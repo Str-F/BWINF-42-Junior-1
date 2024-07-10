@@ -19,7 +19,7 @@ def processing_data(bagcount, gamescount, games):
     fullgames, remaininggames = np.divmod(games, bagcount)
 
     e = np.array(fullgames).reshape(1, -1)
-    f = np.ones(bagcount).reshape(-1, 1)
+    f = np.ones(bagcount, dtype=np.int64).reshape(-1, 1)
 
     result = e*f
     

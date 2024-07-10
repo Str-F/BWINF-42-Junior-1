@@ -3,10 +3,10 @@ from betterfunctions import *
 
 if __name__=='__main__':
     # test with wundertuete0
-    bagcount, gamescount, games = read_file('data/wundertuete5.txt')
-    result = processing_data(bagcount, gamescount, games)
+    bagcount, gamescount, games = read_file('data/w.txt')
+    result = np.array(processing_data(bagcount, gamescount, games), dtype=np.uint64)
     print("DEBUG:")
     print(bagcount, gamescount, games)
     print("")
     print("RESULT")
-    [print(a) for a in result]
+    [print(a.tolist()) for a in result]
