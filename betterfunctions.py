@@ -14,32 +14,39 @@ def read_file(filename):
 
 # function to compute how many games are in each bag
 def processing_data(bagcount, gamescount, games):
+    games = np.array(games, dtype=np.uint64)
 
-    fullgames = []
-    überbleiblesgames= []
+    fullgames, remaininggames = np.divmod(games, bagcount)
 
-    for i in range(len(games)):
-        fullgames.append(games[i]//bagcount)
-        überbleiblesgames.append(games[i] % bagcount)
+    e = np.array(fullgames).reshape(1, -1)
+    f = np.ones(bagcount).reshape(-1, 1)
 
-    fullgames = int(np.sum(fullgames))
-
-    # initialize list
-    result = np.full((bagcount, gamescount),fullgames , np.uint16)
-
+    result = e*f
+    
     # distribute games
     b = 0
-    
-    for i in range(gamescount):
-        for e in range(überbleiblesgames[i]):
-            result[b, i] += 1
-            if b == bagcount - 1:
-                b = 0
-            else:
-                b += 1
 
+    def fill_between(array, column, start, end):
+        if end == start:
+            return
+        elif end > start:
+            array[start:end, column] += 1
+        else:
+            array[:, column] += 1
+            array[end:start, column] -= 1
+        # no return statement needed, since np-array is passed by reference
+
+    start = 0
+
+    for i, game in enumerate(remaininggames): # game = remainggames[i]
+        end = (start+game)%bagcount
+        fill_between(result, i, start, end)
+        start = end
+    
     return result
 
 
 def processing_numpy():
     return
+
+
