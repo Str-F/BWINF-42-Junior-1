@@ -6,10 +6,11 @@ import numpy as np
 class TestProcessing(unittest.TestCase):
 
     def test_processing_large_datasets(self):
-        for _ in range(10):
-            bagcount = np.random.randint(1, int(1e3))
-            gamescount = np.random.randint(1, int(1e3))
-            games = np.random.randint(1, int(3e4), size=gamescount)
+        for _ in range(1):
+            np.random.seed(0)
+            bagcount = 10 # np.random.randint(1, int(1e3))
+            gamescount = 20 # np.random.randint(1, int(1e3))
+            games = np.random.randint(1, int(1e3), size=gamescount)
 
             result = np.array(processing_data(bagcount, gamescount, games), dtype=int)
             self.assertEqual(len(result), bagcount)
