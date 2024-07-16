@@ -3,7 +3,7 @@
 ---
 # Quick start guide
 * Download the latest Version [here](https://github.com/Str-F/BWINF-42-Junior-1/releases) and unpack it on your drive
-* Alternatively you can clone the Reposetory with Git
+* Alternatively you can clone the Repository with Git
 * Open the folder with your favorite code editor
 * You can run `main.py` to see the resault
 * You can change the zero in 'data/wundertuete0.txt' to a number you like, available numbers are in `data/*`
